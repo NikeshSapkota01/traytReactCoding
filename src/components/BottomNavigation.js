@@ -14,11 +14,11 @@ export const MainNavigation = () => {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (value === 0) navigate("/");
-    else if (value === 1) navigate("/movies");
-    else if (value === 2) navigate("/series");
-  }, [value, navigate]);
+  // useEffect(() => {
+  //   if (value === 0) navigate("/");
+  //   else if (value === 1) navigate("/movies");
+  //   else if (value === 2) navigate("/series");
+  // }, [value, navigate]);
 
   return (
     <Box>
@@ -29,6 +29,7 @@ export const MainNavigation = () => {
           bottom: 0,
           left: 0,
           right: 0,
+          zIndex: 200,
         }}
         elevation={3}
       >
