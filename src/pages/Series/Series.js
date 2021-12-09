@@ -7,7 +7,7 @@ import { CustomPagination } from "../../components/Pagination/CustomPagination";
 export const Series = () => {
   const [seriesData, setSeriesData] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(10);
+  const [totalPage, setTotalPage] = useState(0);
 
   const fetchSeriesData = async () => {
     const { data } = await axios.get(
@@ -34,8 +34,9 @@ export const Series = () => {
             </Grid>
           ))}
       </Grid>
-
-      <CustomPagination setPage={setPage} totalPage={totalPage} />
+      {totalPage > 1 && (
+        <CustomPagination setPage={setPage} totalPage={totalPage} />
+      )}
     </div>
   );
 };

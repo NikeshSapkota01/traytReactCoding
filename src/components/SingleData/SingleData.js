@@ -33,22 +33,22 @@ export const SingleData = ({ values, media_type = "" }) => {
             variant={"h6"}
             gutterBottom
           >
-            {values.title}
+            {values.title || values.name}
           </Typography>
-          <Typography variant={"caption"}>
+          <Divider className="divider" light />
+          <Typography variant={"caption"} className="movies-info">
             {values.media_type === "movie" || media_type === "movie" ? (
               <>
-                <span> Movie </span>
-                <MovieFilterIcon fontSize="small" />
+                <span> Movie &nbsp; </span>
+                <MovieFilterIcon fontSize="small" className="image-fixation" />
               </>
             ) : (
               <>
-                <span> TV Series </span>
-                <LiveTvIcon fontSize="small" />
+                <span> TV Series &nbsp; </span>
+                <LiveTvIcon fontSize="small" className="image-fixation" />
               </>
             )}
           </Typography>
-          <Divider className="divider" light />
         </CardContent>
       </Card>
     </BasicModal>

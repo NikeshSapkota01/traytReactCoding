@@ -18,7 +18,7 @@ const darkTheme = createTheme({
 export const Trending = () => {
   const [trendingData, setTrendingData] = useState([]);
   const [page, setPage] = useState(1);
-  const [totalPage, setTotalPage] = useState(10);
+  const [totalPage, setTotalPage] = useState(0);
   const [mediaType, setMediaType] = useState("all");
   const [timewindow, setTimewindow] = useState("week");
 
@@ -84,8 +84,9 @@ export const Trending = () => {
             </Grid>
           ))}
       </Grid>
-
-      <CustomPagination setPage={setPage} totalPage={totalPage} />
+      {totalPage > 1 && (
+        <CustomPagination setPage={setPage} totalPage={totalPage} />
+      )}
     </div>
   );
 };
